@@ -3,24 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual Dom</title>
-    <style>
-        li, p{
-            font-size: 2em;
-        }
-    </style>
+    <title>Assignment</title>
 </head>
 <body>
-    <ul>
-        <li>Name:</li>
-        <li>Age:</li>
-        <li>Subject:</li>
-        <li>Who is the president of Nigeria:</li>
-        <li>Who is the governor of oyo state:</li>
-        <li id="soccer">Which team are the FIFA world cup champions:</li>
-        <li class="tennis">Who won the male US open:</li>
-        <li class="tennis">Who is the female champion in US open:</li>  
-    </ul>   
+    <section>
+        <p id="myButton"></p>
+    <button type="button"onclick="getElementsById('myButton').innerHtml = 'Button clicked!">click me</button>
+    </section>
+
+    <section>
+        <input type = 'text'
+        id = 'myInput'>
+        <button id="mySubmitButton"
+    type="submit">submit</button>
+    </section>
+
+    <section>
+        <p class="myFav">Please change this text</p>
+        <button type="button"
+        id="changeTextButton" onclick="document.getElementsByClassName('myFav').innerHtml = New text here!">click me</button>
+    </section>
+    <section>
+        <input type="number" num="num1" id="first">
+        <input type="number" num="num1" id="second">
+        <p id="sum"></p>
+    </section>
 </body>
-<script src="./today.js"></script>
+<script>    
+const btn = document.querySelectorAll('button');
+function clickEvent(){
+    alert('Button clicked');
+}
+btn[0].addEventListener('click', clickEvent)
+
+
+SubmitEvent(){
+    let <inputValue = document.getElementById('myInput').value;
+    alert(inputValue);
+}
+btn[1].addEventListener('click', submitEvent)
+
+myFav(){
+    const myFavE = document.querySelector('myFav');
+    myFavE.textContent = New text here!;
+    document.getElementById('changeTextButton').addEventListener('click',myFav);
+}
+
+function calculateSum(num1, num2){
+   let num1 = document.getElementById('first')
+   let num2 = document.getElementById('second')
+    const sum = number(num1,value) + number(num2,value);
+    const pE1 = document.getElementById('sum');
+    pE1.textContent = sum;
+    return sum;
+}    
+
+    const btn = document.querySelector('button')
+    btn.addEventListener('click', calculateSum)
+</script>
+
 </html>
